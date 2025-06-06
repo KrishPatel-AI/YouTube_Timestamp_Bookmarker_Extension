@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YouTube Timestamp Bookmark</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        :root {
+            --primaryTheme: #333333;
+            --secondaryTheme: #e87d20;
+            --tertiaryTheme: #f3f4f6;
+            --quartaryTheme: #475569;
+            --borderTheme: #94a3b8;
+        }
+
+        body {
+            width: 300px;
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background-color: var(--tertiaryTheme);
+            color: var(--primaryTheme);
+        }
+
+        h1 {
+            font-size: 20px;
+            color: var(--primaryTheme);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #bookmarkButton {
+            display: block;
+            width: 100%;
+            background-color: var(--primaryTheme);
+            color: var(--tertiaryTheme);
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #bookmarkButton:hover {
+            background-color: var(--secondaryTheme);
+            transform: scale(1.05);
+        }
+
+        #bookmarks {
+            max-height: 300px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+
+        .bookmark {
+            display: flex;
+            align-items: center;
+            background-color: var(--tertiaryTheme);
+            padding: 5px;
+            margin-bottom: 10px;
+            border-bottom: 0.5px solid var(--borderTheme);
+        }
+
+        .bookmark-thumbnail img {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .bookmark-info {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .channel {
+            font-size: 0.9em;
+            color: var(--quartaryTheme);
+        }
+
+        .time {
+            font-size: 0.8em;
+            color: var(--borderTheme);
+        }
+
+        .go-to-video-button,
+        .delete-button {
+            margin-left: 10px;
+            background: none;
+            border: none;
+            color: var(--primaryTheme);
+            cursor: pointer;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .go-to-video-button:hover,
+        .delete-button:hover {
+            color: var(--secondaryTheme);
+        }
+
+        .material-icons {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>YouTube Timestamp Bookmark</h1>
+    <button id="bookmarkButton">Save Current Timestamp</button>
+    <div id="bookmarks"></div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
